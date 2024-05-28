@@ -8,7 +8,7 @@
         @foreach ($jobs as $job)
         <a href="/jobs/{{ $job['id'] }}" class="text-blue-900 hover:underline">
             <li>
-                <strong>{{ $job['title'] }}: </strong>Pays {{ $job['salary'] }} per year.
+                <strong>{{ $job['title'] }}: </strong> {{ $job['description'] }}.
         </a>
         </li>
         @endforeach
