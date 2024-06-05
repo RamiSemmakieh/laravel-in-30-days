@@ -31,11 +31,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('job_tag', function (Blueprint $table) {
-            // Drop the foreign key constraint before dropping the table
+            // Drop foreign key constraints before dropping the table
+            $table->dropForeign(['job_listing_id']);
             $table->dropForeign(['tag_id']);
         });
 
-        Schema::dropIfExists('tags');
         Schema::dropIfExists('job_tag');
+        Schema::dropIfExists('tags');
     }
 };
